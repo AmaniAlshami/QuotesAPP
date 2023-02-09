@@ -2,12 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +26,11 @@
     <None Remove="DAL\Model\" />
     <None Remove="DAL\Repository\" />
     <None Remove="Pages\" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.Sqlite" />
+    <None Remove="DAL\Migrations\" />
+    <None Remove="DAL\UnitOfWork\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BI\" />
@@ -31,5 +42,7 @@
     <Folder Include="DAL\Model\" />
     <Folder Include="DAL\Repository\" />
     <Folder Include="Pages\" />
+    <Folder Include="DAL\Migrations\" />
+    <Folder Include="DAL\UnitOfWork\" />
   </ItemGroup>
 </Project>
