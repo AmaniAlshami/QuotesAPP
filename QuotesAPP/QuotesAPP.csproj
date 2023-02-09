@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="BI\" />
+    <None Remove="DAL\" />
+    <None Remove="Service\" />
+    <None Remove="BI\DTO\" />
+    <None Remove="Services\Author\" />
+    <None Remove="Services\Qoute\" />
+    <None Remove="DAL\Model\" />
+    <None Remove="DAL\Repository\" />
+    <None Remove="Pages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BI\" />
+    <Folder Include="DAL\" />
+    <Folder Include="Services\" />
+    <Folder Include="BI\DTO\" />
+    <Folder Include="Services\Author\" />
+    <Folder Include="Services\Qoute\" />
+    <Folder Include="DAL\Model\" />
+    <Folder Include="DAL\Repository\" />
+    <Folder Include="Pages\" />
+  </ItemGroup>
+</Project>
