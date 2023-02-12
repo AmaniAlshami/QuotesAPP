@@ -27,5 +27,17 @@ public class AuthorController : ControllerBase
         return auotherService.GetAuthors();
     }
 
+    [HttpDelete]
+    public void DeleteAuthor(int id)
+    {
+         auotherService.DeleteAuthor(id);
+    }
+
+    [HttpPut]
+    public void UpdateAuthor(Author author)
+    {
+        auotherService.UpdateAuthor(author);
+    }
+
 }
 
