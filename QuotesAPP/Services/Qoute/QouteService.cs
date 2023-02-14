@@ -34,8 +34,9 @@ namespace QuotesAPP.Services
 
 		public Quote GetRandomQuote()
 		{
+			var len = GetQuotes().Count();
 			Random random = new Random();
-			int randomId = random.Next(10);
+			int randomId = random.Next(1,len);
 			return unitOfWork.QuoteRepository.GetById(randomId);
 		}
 

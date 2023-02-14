@@ -14,3 +14,11 @@ build_property.SupportLocalizedComponentNames =
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/amanialshami/Projects/QuotesAPP/QuotesAPP
 build_property._RazorSourceGeneratorDebug = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Pages/Authors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXV0aG9ycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Pages/Quotes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUXVvdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 

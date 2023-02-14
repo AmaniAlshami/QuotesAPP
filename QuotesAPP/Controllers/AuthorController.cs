@@ -5,14 +5,16 @@ using QuotesAPP.Services;
 namespace QuotesAPP.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class AuthorController : ControllerBase
 {
     private readonly IAuthorService auotherService;
+    private readonly IQuoteService qouteService;
 
-    public AuthorController(IAuthorService auotherService)
+    public AuthorController(IAuthorService auotherService, IQuoteService qouteService)
     {
         this.auotherService = auotherService;
+        this.qouteService = qouteService;
     }
 
     [HttpPost]
@@ -21,7 +23,7 @@ public class AuthorController : ControllerBase
         auotherService.AddAuthor(author);
     }
 
-    [HttpGet("List")]
+    [HttpGet("list")]
     public IEnumerable<Author> GetAuthors()
     {
         return auotherService.GetAuthors();
@@ -39,5 +41,10 @@ public class AuthorController : ControllerBase
         auotherService.UpdateAuthor(author);
     }
 
+    [HttpGet("{authorId}/quotes")]
+    public IEnumerable<Quote> GetQuotesByAuthor(int authorId)
+    {
+        return qouteService.GetQuotesByAuthor(authorId);
+    }
 }
 

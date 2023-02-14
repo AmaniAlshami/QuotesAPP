@@ -15,7 +15,7 @@ namespace QuotesAPP.DAL
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string conn = "Data Source=QouteDB.db";
+            string conn = "Data Source=./QouteDB.db";
                 if (!optionsBuilder.IsConfigured)
                    optionsBuilder.UseSqlite(conn);
         }

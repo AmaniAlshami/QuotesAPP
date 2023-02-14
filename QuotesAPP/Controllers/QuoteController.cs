@@ -5,13 +5,14 @@ using QuotesAPP.Services;
 namespace QuotesAPP.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class QouteController : ControllerBase
 {
     private readonly IQuoteService QouteService;
 
-    public QouteController()
+    public QouteController(IQuoteService QouteService)
     {
+        this.QouteService = QouteService;
     }
 
     [HttpPost]
@@ -20,16 +21,12 @@ public class QouteController : ControllerBase
         QouteService.AddQuote(quote);
     }
 
-    [HttpGet("List")]
+    [HttpGet("list")]
     public IEnumerable<Quote> GetQuotes()
     {
         return QouteService.GetQuotes();
     }
-    [HttpGet("authorId")]
-    public IEnumerable<Quote> GetQuotesByAuthor(int authorId)
-    {
-        return QouteService.GetQuotesByAuthor(authorId);
-    }
+
     [HttpGet("random")]
     public Quote GetRandomQuote()
     {

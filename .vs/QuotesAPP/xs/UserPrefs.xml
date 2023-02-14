@@ -1,4 +1,67 @@
 ﻿<Properties StartupConfiguration="{FD074286-AE73-4F88-ADBB-D8AED973BF99}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="QuotesAPP/Pages/Quotes.cshtml">
+    <Files>
+      <File FileName="QuotesAPP/DAL/Model/Author.cs" Line="1" Column="1" />
+      <File FileName="QuotesAPP/DAL/QuoteContext.cs" Line="18" Column="41" />
+      <File FileName="QuotesAPP/DAL/Repository/IGenericRepository.cs" Line="6" Column="45" />
+      <File FileName="QuotesAPP/DAL/Repository/GenericRepository.cs" Line="37" Column="1" />
+      <File FileName="QuotesAPP/DAL/UnitOfWork/UnitOfWork.cs" Line="41" Column="1" />
+      <File FileName="QuotesAPP/Services/Author/AuthorService.cs" Line="15" Column="24" />
+      <File FileName="QuotesAPP/Services/Qoute/QouteService.cs" Line="36" Column="1" />
+      <File FileName="QuotesAPP/Program.cs" Line="20" Column="49" />
+      <File FileName="QuotesAPP/Services/Author/IAuthorService.cs" Line="8" Column="39" />
+      <File FileName="QuotesAPP/Services/Qoute/IQuoteService.cs" Line="11" Column="32" />
+      <File FileName="QuotesAPP/Controllers/AuthorController.cs" Line="19" Column="1" />
+      <File FileName="QuotesAPP/appsettings.json" Line="3" Column="55" />
+      <File FileName="QuotesAPP/Controllers/QuoteController.cs" Line="9" Column="14" />
+      <File FileName="QuotesAPP/Pages/Quotes.cshtml.cs" Line="22" Column="1" />
+      <File FileName="QuotesAPP/BI/AppSettings.cs" Line="1" Column="1" />
+      <File FileName="QuotesAPP/Properties/launchSettings.json" Line="25" Column="6" />
+      <File FileName="QuotesAPP/appsettings.Staging.json" Line="1" Column="1" />
+      <File FileName="QuotesAPP/Pages/Authors.cshtml" Line="1" Column="17" />
+      <File FileName="QuotesAPP/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="QuotesAPP/Pages/Quotes.cshtml" Line="5" Column="1" />
+      <File FileName="QuotesAPP/appsettings.Development.json" Line="1" Column="1" />
+      <File FileName="QuotesAPP/Pages/Authors.cshtml.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="QuotesAPP" expanded="True">
+            <Node name="QuotesAPP" expanded="True">
+              <Node name="Controllers" expanded="True" />
+              <Node name="DAL" expanded="True">
+                <Node name="Repository" expanded="True" />
+                <Node name="UnitOfWork" expanded="True" />
+              </Node>
+              <Node name="Pages" expanded="True">
+                <Node name="Authors.cshtml" expanded="True" />
+                <Node name="Quotes.cshtml" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True">
+                <Node name="PublishProfiles" expanded="True" />
+              </Node>
+              <Node name="Services" expanded="True">
+                <Node name="Author" expanded="True" />
+                <Node name="Qoute" expanded="True" />
+              </Node>
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.QuotesAPP PreferredExecutionTarget="/Applications/Safari.app" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.QuotesAPP FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Controllers/QuoteController.cs" relfile="QuotesAPP/Controllers/QuoteController.cs" line="20" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
