@@ -42,9 +42,9 @@ namespace QuotesAPP.Controllers
                  return NotFound();
              }
 
-             return View(author);
-         }
-        
+            return RedirectToAction("Index", "Quote",  new { Author = $"{id}" });
+        }
+
         // GET: Author/Create
         [HttpGet("Create")]
         public IActionResult Create()

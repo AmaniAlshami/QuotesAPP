@@ -13,16 +13,22 @@ namespace QuotesAPP.Controllers
     public class QuoteController : Controller
     {
         private readonly IQuoteService quoteService;
+        private readonly IAuthorService authorService;
 
-        public QuoteController(IQuoteService QouteService)
+        public QuoteController(IQuoteService QouteService, IAuthorService authorService)
         {
             this.quoteService = QouteService;
+            this.authorService = authorService;
         }
 
         // GET: Qoute
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string author)
         {
+            ViewBag.Author = authorService.GetAuthors().Select(x => x.Id);
+            if(author != null)
+                return View(quoteService.GetQuotesByAuthor(int.Parse(author)));
             return View(quoteService.GetQuotes());
+            
         }
 
 
