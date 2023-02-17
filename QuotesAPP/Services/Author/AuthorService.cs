@@ -14,6 +14,7 @@ namespace QuotesAPP.Services
 
 		public void AddAuthor(Author author)
 		{
+			author.CreatedAt = DateTime.Now;
 			unitOfWork.AuthorRepository.Insert(author);
 			unitOfWork.Save();
 		}
@@ -28,6 +29,16 @@ namespace QuotesAPP.Services
 		{
 			unitOfWork.AuthorRepository.Update(author);
 			unitOfWork.Save();
+		}
+
+		public Author GetAuthorById(int id)
+		{
+			return unitOfWork.AuthorRepository.GetById(id);
+		}
+
+		public bool AuthorExists(int id)
+		{
+			return unitOfWork.AuthorRepository.GetById(id) != null;
 		}
 	}
 }

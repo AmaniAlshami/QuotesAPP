@@ -1,49 +1,118 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using QuotesAPP.DAL;
 using QuotesAPP.Services;
 
-namespace QuotesAPP.Controllers;
-
-[ApiController]
-[Route("api/[controller]")]
-public class QouteController : ControllerBase
+namespace QuotesAPP.Controllers
 {
-    private readonly IQuoteService QouteService;
-
-    public QouteController(IQuoteService QouteService)
+    public class QuoteController : Controller
     {
-        this.QouteService = QouteService;
-    }
+        private readonly IQuoteService quoteService;
 
-    [HttpPost]
-    public void AddQuote(Quote quote)
-    {
-        QouteService.AddQuote(quote);
-    }
+        public QuoteController(IQuoteService QouteService)
+        {
+            this.quoteService = QouteService;
+        }
 
-    [HttpGet("list")]
-    public IEnumerable<Quote> GetQuotes()
-    {
-        return QouteService.GetQuotes();
-    }
+        // GET: Qoute
+        public async Task<IActionResult> Index()
+        {
+            return View(quoteService.GetQuotes());
+        }
 
-    [HttpGet("random")]
-    public Quote GetRandomQuote()
-    {
-        return QouteService.GetRandomQuote();
-    }
 
-    [HttpDelete]
-    public void DeleteQuote(int id)
-    {
-        QouteService.DeleteQuote(id);
-    }
+        // GET: Qoute/Create
+        [HttpGet("Create")]
+        public IActionResult Create()
+        {
+            return View();
+        }
 
-    [HttpPut]
-    public void UpdateQuote(Quote quote)
-    {
-        QouteService.UpdateQuote(quote);
-    }
+        // POST: Quote/Create
+        [HttpPost("Create")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Name")] Quote quote)
+        {
+            if (ModelState.IsValid)
+            {
+                quoteService.AddQuote(quote);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(quote);
+        }
 
+        // GET: Quote/Edit/5
+        [HttpGet("Edit/{id}")]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var quote = quoteService.GetQuoteById((int)id);
+            if (quote == null)
+            {
+                return NotFound();
+            }
+            return View(quote);
+        }
+
+        // POST: Quote/Edit/5
+        [HttpPost("Edit/{id}")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Quote quote)
+        {
+            if (id != quote.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+
+                quoteService.UpdateQuote(quote);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(quote);
+        }
+
+        // GET: Quote/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var quote = quoteService.GetQuoteById((int)id);
+
+            if (quote == null)
+            {
+                return NotFound();
+            }
+
+            return View(quote);
+        }
+
+        // POST: Quote/Delete/5
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var quote = quoteService.GetQuoteById(id);
+            quoteService.DeleteQuote(id);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool QuoteExists(int id)
+        {
+            return quoteService.QuoteExists(id);
+        }
+    }
 }
-

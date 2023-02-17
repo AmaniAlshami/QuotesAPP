@@ -45,6 +45,15 @@ namespace QuotesAPP.Services
 			return unitOfWork.QuoteRepository.GetAll(x=> x.AuthorId == authorId)
 				.OrderByDescending(x=> x.CreatedAt);
 		}
+
+		public Quote GetQuoteById(int id)
+		{
+			return unitOfWork.QuoteRepository.GetById(id);
+		}
+		public bool QuoteExists(int id)
+		{
+			return unitOfWork.QuoteRepository.GetById(id) != null;
+		}
 	}
 }
 

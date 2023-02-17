@@ -50,7 +50,8 @@ namespace QuotesAPP.DAL
         public virtual void Update(TEntity model)
         {
             dbSet.Attach(model);
-            this.context.Entry(model).State = EntityState.Modified;
+            dbSet.Update(model);
+            //this.context.Entry(model).State = EntityState.Modified;
         }
 
    

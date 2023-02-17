@@ -16,4 +16,8 @@ namespace QuotesAPP.Services;
 
         public IEnumerable<Quote> GetQuotesByAuthor(int authorId);
 
+    public Quote GetQuoteById(int id);
+
+    public bool QuoteExists(int id);
+
     }

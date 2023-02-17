@@ -15,10 +15,62 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/amanialshami/Projects/QuotesAPP/QuotesAPP
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Pages/Authors.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQXV0aG9ycy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Pages/Quotes.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUXVvdGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Author/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Author/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0RlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Author/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0RldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Author/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0VkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Author/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQXV0aG9yL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Quote/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVvdGUvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Quote/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVvdGUvRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Quote/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVvdGUvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Quote/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVvdGUvRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Quote/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUXVvdGUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-khq5cicnun

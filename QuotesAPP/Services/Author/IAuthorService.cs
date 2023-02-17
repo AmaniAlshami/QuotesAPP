@@ -12,4 +12,8 @@ public interface IAuthorService
 	public void DeleteAuthor(int id);
 
 	public void UpdateAuthor(Author author);
+
+	public Author GetAuthorById(int id);
+	public bool AuthorExists(int id);
+
 }
