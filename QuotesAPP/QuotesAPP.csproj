@@ -23,6 +23,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,6 +45,8 @@
     <None Remove="Controllers\" />
     <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Views\Account\" />
+    <None Remove="Microsoft.AspNet.Identity.EntityFramework" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BI\" />
@@ -54,11 +57,11 @@
     <Folder Include="Services\Qoute\" />
     <Folder Include="DAL\Model\" />
     <Folder Include="DAL\Repository\" />
-    <Folder Include="Pagestt\" />
     <Folder Include="DAL\Migrations\" />
     <Folder Include="DAL\UnitOfWork\" />
     <Folder Include="wwwroot\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\css\site.css" />
@@ -122,6 +125,7 @@
     <Content Remove="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
     <Content Remove="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt" />
     <Content Remove="wwwroot\" />
+    <Content Remove="BI\DTO\RegisterDTO.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\css\site.css">

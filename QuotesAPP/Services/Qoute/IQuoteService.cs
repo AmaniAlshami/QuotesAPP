@@ -1,10 +1,11 @@
-﻿using QuotesAPP.DAL;
+﻿using QuotesAPP.BI;
+using QuotesAPP.DAL;
 
 namespace QuotesAPP.Services;
 
     public interface IQuoteService
     {
-        public IEnumerable<Quote> GetQuotes();
+        public IEnumerable<QuoteDTO> GetQuotes();
 
         public void AddQuote(Quote quote);
 
@@ -14,7 +15,7 @@ namespace QuotesAPP.Services;
 
         public Quote GetRandomQuote();
 
-        public IEnumerable<Quote> GetQuotesByAuthor(int authorId);
+    public IEnumerable<QuoteDTO> GetQuotesByAuthor(int authorId);
 
     public Quote GetQuoteById(int id);
 

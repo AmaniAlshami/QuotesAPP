@@ -1,4 +1,5 @@
-﻿using QuotesAPP.DAL;
+﻿using QuotesAPP.BI;
+using QuotesAPP.DAL;
 
 namespace QuotesAPP.Services;
 
@@ -15,5 +16,6 @@ public interface IAuthorService
 
 	public Author GetAuthorById(int id);
 	public bool AuthorExists(int id);
+	public Author AuthorLogin(Login model);
 
 }

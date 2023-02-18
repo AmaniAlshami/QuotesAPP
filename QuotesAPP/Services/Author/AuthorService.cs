@@ -1,4 +1,5 @@
 ﻿using System;
+using QuotesAPP.BI;
 using QuotesAPP.DAL;
 
 namespace QuotesAPP.Services
@@ -39,6 +40,12 @@ namespace QuotesAPP.Services
 		public bool AuthorExists(int id)
 		{
 			return unitOfWork.AuthorRepository.GetById(id) != null;
+		}
+
+		public Author AuthorLogin(Login model)
+		{
+			return unitOfWork.AuthorRepository.GetAll(x => x.Email == model.Email
+			&& x.Password == model.Password).FirstOrDefault();
 		}
 	}
 }

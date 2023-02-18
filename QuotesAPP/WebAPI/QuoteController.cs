@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuotesAPP.BI;
 using QuotesAPP.DAL;
 using QuotesAPP.Services;
 
@@ -22,7 +23,7 @@ public class QouteController : Controller
     }
 
     [HttpGet("list")]
-    public IEnumerable<Quote> GetQuotes()
+    public IEnumerable<QuoteDTO> GetQuotes()
     {
         return QouteService.GetQuotes();
     }

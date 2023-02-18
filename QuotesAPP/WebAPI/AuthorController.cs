@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuotesAPP.BI;
 using QuotesAPP.DAL;
 using QuotesAPP.Services;
 
@@ -42,7 +43,7 @@ public class AuthorController : Controller
     }
 
     [HttpGet("{authorId}/quotes")]
-    public IEnumerable<Quote> GetQuotesByAuthor(int authorId)
+    public IEnumerable<QuoteDTO> GetQuotesByAuthor(int authorId)
     {
         return qouteService.GetQuotesByAuthor(authorId);
     }

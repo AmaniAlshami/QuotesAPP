@@ -2,12 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using QuotesAPP.DAL;
 using QuotesAPP.Services;
-
 namespace QuotesAPP.Controllers
 {
     public class QuoteController : Controller
@@ -24,8 +25,9 @@ namespace QuotesAPP.Controllers
         // GET: Qoute
         public async Task<IActionResult> Index(string author)
         {
-            ViewBag.Author = authorService.GetAuthors().Select(x => x.Id);
-            if(author != null)
+            ViewBag.Author = authorService.GetAuthors().Select(x=> x.Id);
+
+            if (author != null)
                 return View(quoteService.GetQuotesByAuthor(int.Parse(author)));
             return View(quoteService.GetQuotes());
             
@@ -34,6 +36,7 @@ namespace QuotesAPP.Controllers
 
         // GET: Qoute/Create
         [HttpGet("Create")]
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -42,10 +45,13 @@ namespace QuotesAPP.Controllers
         // POST: Quote/Create
         [HttpPost("Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name")] Quote quote)
+        [Authorize]
+        public async Task<IActionResult> Create([Bind("Text")] Quote quote)
         {
             if (ModelState.IsValid)
             {
+                quote.AuthorId = int.Parse(User.Identity.GetUserId());
+                quote.CreatedAt = DateTime.Now;
                 quoteService.AddQuote(quote);
                 return RedirectToAction(nameof(Index));
             }
