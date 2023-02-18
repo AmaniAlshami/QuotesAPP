@@ -13,7 +13,7 @@ namespace QuotesAPP.Services;
 
         public void UpdateQuote(Quote quote);
 
-        public Quote GetRandomQuote();
+        public QuoteDTO GetRandomQuote();
 
     public IEnumerable<QuoteDTO> GetQuotesByAuthor(int authorId);
 

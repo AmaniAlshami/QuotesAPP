@@ -78,7 +78,7 @@ namespace QuotesAPP.Controllers
         // POST: Quote/Edit/5
         [HttpPost("Edit/{id}")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name")] Quote quote)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Text")] Quote quote)
         {
             if (id != quote.Id)
             {
@@ -87,7 +87,8 @@ namespace QuotesAPP.Controllers
 
             if (ModelState.IsValid)
             {
-
+                quote.AuthorId = int.Parse(User.Identity.GetUserId());
+                quote.CreatedAt = DateTime.Now;
                 quoteService.UpdateQuote(quote);
                 return RedirectToAction(nameof(Index));
             }
@@ -95,6 +96,7 @@ namespace QuotesAPP.Controllers
         }
 
         // GET: Quote/Delete/5
+        [HttpGet("Delete/{id}")]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -114,7 +116,8 @@ namespace QuotesAPP.Controllers
 
         // POST: Quote/Delete/5
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        [HttpPost("Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
         {
             var quote = quoteService.GetQuoteById(id);
             quoteService.DeleteQuote(id);

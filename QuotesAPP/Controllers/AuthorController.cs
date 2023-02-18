@@ -128,10 +128,10 @@ namespace QuotesAPP.Controllers
         {
             var author = auotherService.GetAuthorById(id);
             auotherService.DeleteAuthor(id);
-          
-            return RedirectToAction(nameof(Index));
+
+            return RedirectToAction("Index", "Quote", new { Author = $"{id}" });
         }
-    
+
         private bool AuthorExists(int id)
         {
             return auotherService.AuthorExists(id);

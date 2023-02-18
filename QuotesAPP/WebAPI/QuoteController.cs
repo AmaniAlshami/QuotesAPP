@@ -29,7 +29,7 @@ public class QouteController : Controller
     }
 
     [HttpGet("random")]
-    public Quote GetRandomQuote()
+    public QuoteDTO GetRandomQuote()
     {
         return QouteService.GetRandomQuote();
     }

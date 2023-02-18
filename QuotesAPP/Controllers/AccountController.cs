@@ -1,4 +1,5 @@
 using System.Security.Claims;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
@@ -82,7 +83,15 @@ namespace QuotesAPP.Controllers
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
 
-            return RedirectToAction("Index", "Quote");
+            return RedirectToAction("Logout", "Account");
+        }
+
+        [HttpGet]
+        public IActionResult Account()
+        {
+            var id = User.Identity.GetUserId();
+            var author = auotherService.GetAuthorById(int.Parse(id));
+            return View(author);
         }
     }
 }

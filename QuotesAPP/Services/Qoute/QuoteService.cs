@@ -41,12 +41,12 @@ namespace QuotesAPP.Services
 			unitOfWork.Save();
 		}
 
-		public Quote GetRandomQuote()
+		public QuoteDTO GetRandomQuote()
 		{
-			var len = GetQuotes().Count();
+			var quotes = GetQuotes().ToList();
 			Random random = new Random();
-			int randomId = random.Next(1,len);
-			return unitOfWork.QuoteRepository.GetById(randomId);
+			int index = random.Next(quotes.Count());
+			return quotes[index];
 		}
 
 		public IEnumerable<QuoteDTO> GetQuotesByAuthor(int authorId)
