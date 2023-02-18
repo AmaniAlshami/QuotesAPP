@@ -15,10 +15,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/amanialshami/Projects/QuotesAPP/QuotesAPP
 build_property._RazorSourceGeneratorDebug = 
 
-[/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Pages/Quotes.cshtml]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXMvUXVvdGVzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [/Users/amanialshami/Projects/QuotesAPP/QuotesAPP/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9Mb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

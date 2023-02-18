@@ -15,7 +15,7 @@ builder.Services.AddDbContext<QuoteContext>(options => options.UseSqlite("Data S
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IQuoteService, QuoteService>();
-builder.Services.AddScoped<IAuthorizationService, IAuthorizationService>();
+builder.Services.AddScoped<IAuthorizationService, AuthorizationService>();
 
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults

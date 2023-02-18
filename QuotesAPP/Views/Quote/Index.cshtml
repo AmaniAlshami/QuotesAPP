@@ -7,16 +7,16 @@
 
 <h1>Quotes</h1>
 @if ((await AuthorizationService.AuthorizeAsync(User)).Succeeded)
-    {
+{
     <p>
         <a asp-action="Create">Create New</a>
     </p>
-    }
+}
 <p>
     @using (Html.BeginForm("Index", "Quote", FormMethod.Get))
     {
         <text>Author</text>@Html.DropDownList("Author", new SelectList(ViewBag.Author), "Authors")
-       
+
 
         <input type="submit" value="Search" />
     }
@@ -25,7 +25,7 @@
     <thead>
         <tr>
             <th>
-               <p>Quote</p>
+                <p>Quote</p>
             </th>
             <th>
                 <p>Author</p>
@@ -36,22 +36,45 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Text)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            @if ((await AuthorizationService.AuthorizeUserQuoteAction(User, item)).Succeeded)
-                {
+            <tr>
                 <td>
-                    <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
-                    <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
-
+                    @Html.DisplayFor(modelItem => item.Text)
                 </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Author)
+                </td>
+                @if ((await AuthorizationService.AuthorizeUserQuoteAction(User, item)).Succeeded)
+                {
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+
+                    </td>
                 }
             </tr>
         }
     </tbody>
 </table>
+<input id="button1" type="button" value="Get Random Quote" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">$(document).ready(function () {
+        $('#button1').click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/api/qoute/random",
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+
+                    alert(response.text);
+                },
+                failure: function (response) {
+                    alert(response.responseText);
+                    alert("Failure");
+                },
+                error: function (response) {
+                    alert(response);
+                    alert("Error");
+                }
+            });
+        });
+    });</script>
